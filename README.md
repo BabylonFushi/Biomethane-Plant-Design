@@ -2,7 +2,7 @@
 
 Pipeline de análisis geoespacial (descarga de datos, procesado, scoring, clustering y viabilidad) que alimenta el [mapa interactivo](https://babylonfushi.github.io/biomethane_map/).
 
-> ⚠️ Repositorio en construcción. Esta primera fase organiza los notebooks en una estructura común; cada uno se irá limpiando y documentando de forma individual.
+> ⚠️ Repositorio en fase previa al final. Los notebooks y la arquitectura de descargas y uso de directorios ha sido limpiados y el modelo de idoneidad funciona apropiadamente. Queda actualizar requerimientos, añadir documentación y finalizar el notebook de viabilidad
 
 ## Estructura
 
@@ -44,11 +44,8 @@ data/
 - ~~`06_clasificacion_suelo`: sustituir rutas absolutas~~
 - ~~`idoneidad_scoring_clustering`: sustituir ruta absoluta en la celda del mapa final~~
 - ~~`06_clasificacion_suelo`: exportar `buffer_nucleos_urbanos.gpkg` a `data/raw/06_clasificacion_suelo/`~~
-
+- ~~`idoneidad_scoring_clustering`: sustituir ruta absoluta en la celda del mapa final~~
 **Pendiente:**
-- [ ] Añadir cabecera de documentación (fuente, fecha, archivo de salida) en cada notebook
-- [ ] `requirements.txt` / `environment.yml` definitivo
-- [ ] `idoneidad_scoring_clustering`: sustituir ruta absoluta en la celda del mapa final
 - [ ] Añadir cabecera de documentación (fuente, fecha, archivo de salida) en cada notebook
 - [ ] `requirements.txt` / `environment.yml` definitivo
 
