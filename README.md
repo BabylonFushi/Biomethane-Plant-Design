@@ -27,7 +27,7 @@ data/
 │   ├── 03_pendiente_dem/     pendiente_huesca_provincia.tif
 │   ├── 04_red_natura2000/    red_natura_huesca.gpkg
 │   ├── 05_red_viaria/        carreteras_camiones_huesca.gpkg
-│   ├── 06_clasificacion_suelo/  clasificacion_suelo_huesca.gpkg
+│   ├── 06_clasificacion_suelo/  clasificacion_suelo_huesca.gpkg + buffer_nucleos_urbanos.gpkg
 │   └── delimitations/        Huesca_Delimitacion.geojson y .qmd
 ├── map/                      Mapas HTML/PNG generados por cada notebook, misma subcarpeta por notebook
 └── processed/                Grid procesado, Top 10, capas intermedias
