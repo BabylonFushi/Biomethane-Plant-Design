@@ -27,7 +27,9 @@ El pipeline se organiza en tres partes, de 63.612 celdas de 500 m a una recomend
 **Parte 1 — Idoneidad geoespacial** (`01_download/` + `02_analysis/idoneidad_scoring_clustering.ipynb`):
 sobre la provincia se tiende una malla de 63.612 celdas de 500×500 m y se cruzan seis capas (biomasa
 porcina, gasoducto, carretera, pendiente, suelo y Red Natura 2000). Exclusiones duras + score
-ponderado + K-Means (k=7) descriptivo dejan 2.890 celdas viables.
+ponderado + K-Means (k=7) descriptivo dejan 2.890 celdas viables. Como contexto complementario,
+`02_analysis/censo_porcino.ipynb` sitúa el censo porcino español dentro de la tendencia europea
+(histórico Eurostat y proyección a 2030 por país).
 
 Los pesos del score se obtuvieron mediante una **matriz AHP** (Proceso Analítico Jerárquico), con un
 ratio de consistencia **CR = 0,0000 (OK, consistente)**:
@@ -45,8 +47,7 @@ ratio de consistencia **CR = 0,0000 (OK, consistente)**:
 **Parte 2 — Proyección del censo y celdas óptimas** (`03_viability/`, primera etapa): proyección del
 censo porcino a 2040 (regresión lineal, MAPE ≈ 1,6 %), economía preliminar celda a celda y modelos
 Random Forest de apoyo. Un filtro triple (stock proyectado, distancia a gasoducto, margen anual) deja
-209 celdas óptimas. Como contexto complementario, `02_analysis/censo_porcino.ipynb` sitúa el censo
-porcino español dentro de la tendencia europea (histórico Eurostat y proyección a 2030 por país).
+209 celdas óptimas.
 
 **Parte 3 — Viabilidad económica (Monte Carlo)** (`03_viability/`, segunda etapa): 25.000 simulaciones
 por localización sobre un modelo de flujos de caja descontados a 15 años, con 3 escalas de planta,
