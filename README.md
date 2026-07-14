@@ -1,4 +1,4 @@
-🇪🇸
+<img src="https://flagcdn.com/48x36/es.png" alt="ES" width="32">
 
 # Análisis de Idoneidad — Planta de Biometano (Huesca)
 
@@ -27,9 +27,7 @@ El pipeline se organiza en tres partes, de 63.612 celdas de 500 m a una recomend
 **Parte 1 — Idoneidad geoespacial** (`01_download/` + `02_analysis/idoneidad_scoring_clustering.ipynb`):
 sobre la provincia se tiende una malla de 63.612 celdas de 500×500 m y se cruzan seis capas (biomasa
 porcina, gasoducto, carretera, pendiente, suelo y Red Natura 2000). Exclusiones duras + score
-ponderado + K-Means (k=7) descriptivo dejan 2.890 celdas viables. Como contexto complementario,
-`02_analysis/censo_porcino.ipynb` sitúa el censo porcino español dentro de la tendencia europea
-(histórico Eurostat y proyección a 2030 por país).
+ponderado + K-Means (k=7) descriptivo dejan 2.890 celdas viables.
 
 Los pesos del score se obtuvieron mediante una **matriz AHP** (Proceso Analítico Jerárquico), con un
 ratio de consistencia **CR = 0,0000 (OK, consistente)**:
@@ -104,11 +102,10 @@ notebooks/
 │   ├── 04_red_natura2000.ipynb
 │   ├── 05_red_viaria.ipynb
 │   └── 06_clasificacion_suelo.ipynb
-├── 02_analysis/                  Grid 500x500m, scoring, K-Means, mapa final y censo porcino UE
-│   ├── idoneidad_scoring_clustering.ipynb
-│   └── censo_porcino.ipynb       Histórico y proyección 2030 del censo porcino UE (Eurostat, CAGR)
+├── 02_analysis/                  Grid 500x500m, scoring, K-Means y mapa final
+│   └── idoneidad_scoring_clustering.ipynb
 └── 03_viability/                 Viabilidad económica del Top 10
-    └── viabilidad_economica.ipynb
+    └── TFM_viabilidad_economica_Fl....ipynb
 
 streamlit_app/                    Aplicación de presentación del proyecto
 ├── __pycache__/
@@ -155,7 +152,7 @@ requirements.txt
 
 ---
 
-🇬🇧
+<img src="https://flagcdn.com/48x36/gb.png" alt="GB" width="32">
 
 # Suitability Analysis — Biomethane Plant (Huesca)
 
@@ -202,8 +199,7 @@ consistency ratio of **CR = 0.0000 (OK, consistent)**:
 **Part 2 — Census projection and optimal cells** (`03_viability/`, first stage): pig census projection
 to 2040 (linear regression, MAPE ≈ 1.6%), cell-by-cell preliminary economics and supporting Random
 Forest models. A triple filter (projected stock, distance to pipeline, annual margin) leaves 209
-optimal cells. As complementary context, `02_analysis/censo_porcino.ipynb` places the Spanish pig
-census within the broader European trend (Eurostat history and a per-country 2030 projection).
+optimal cells.
 
 **Part 3 — Economic viability (Monte Carlo)** (`03_viability/`, second stage): 25,000 simulations per
 location on a 15-year discounted cash flow model, with 3 plant scales, variable CAPEX and a ramp-up
@@ -259,11 +255,10 @@ notebooks/
 │   ├── 04_red_natura2000.ipynb
 │   ├── 05_red_viaria.ipynb
 │   └── 06_clasificacion_suelo.ipynb
-├── 02_analysis/                  500x500m grid, scoring, K-Means, final map and EU pig census
-│   ├── idoneidad_scoring_clustering.ipynb
-│   └── censo_porcino.ipynb       EU pig census history and 2030 projection (Eurostat, CAGR)
+├── 02_analysis/                  500x500m grid, scoring, K-Means and final map
+│   └── idoneidad_scoring_clustering.ipynb
 └── 03_viability/                 Economic viability of the Top 10
-    └── viabilidad_economica.ipynb
+    └── TFM_viabilidad_economica_Fl....ipynb
 
 streamlit_app/                    Project presentation application
 ├── __pycache__/
