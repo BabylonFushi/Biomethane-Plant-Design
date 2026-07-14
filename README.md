@@ -45,7 +45,8 @@ ratio de consistencia **CR = 0,0000 (OK, consistente)**:
 **Parte 2 — Proyección del censo y celdas óptimas** (`03_viability/`, primera etapa): proyección del
 censo porcino a 2040 (regresión lineal, MAPE ≈ 1,6 %), economía preliminar celda a celda y modelos
 Random Forest de apoyo. Un filtro triple (stock proyectado, distancia a gasoducto, margen anual) deja
-209 celdas óptimas.
+209 celdas óptimas. Como contexto complementario, `02_analysis/censo_porcino.ipynb` sitúa el censo
+porcino español dentro de la tendencia europea (histórico Eurostat y proyección a 2030 por país).
 
 **Parte 3 — Viabilidad económica (Monte Carlo)** (`03_viability/`, segunda etapa): 25.000 simulaciones
 por localización sobre un modelo de flujos de caja descontados a 15 años, con 3 escalas de planta,
@@ -102,10 +103,11 @@ notebooks/
 │   ├── 04_red_natura2000.ipynb
 │   ├── 05_red_viaria.ipynb
 │   └── 06_clasificacion_suelo.ipynb
-├── 02_analysis/                  Grid 500x500m, scoring, K-Means y mapa final
-│   └── idoneidad_scoring_clustering.ipynb
+├── 02_analysis/                  Grid 500x500m, scoring, K-Means, mapa final y censo porcino UE
+│   ├── idoneidad_scoring_clustering.ipynb
+│   └── censo_porcino.ipynb       Histórico y proyección 2030 del censo porcino UE (Eurostat, CAGR)
 └── 03_viability/                 Viabilidad económica del Top 10
-    └── TFM_viabilidad_economica_Fl....ipynb
+    └── viabilidad_economica.ipynb
 
 streamlit_app/                    Aplicación de presentación del proyecto
 ├── __pycache__/
@@ -199,7 +201,8 @@ consistency ratio of **CR = 0.0000 (OK, consistent)**:
 **Part 2 — Census projection and optimal cells** (`03_viability/`, first stage): pig census projection
 to 2040 (linear regression, MAPE ≈ 1.6%), cell-by-cell preliminary economics and supporting Random
 Forest models. A triple filter (projected stock, distance to pipeline, annual margin) leaves 209
-optimal cells.
+optimal cells. As complementary context, `02_analysis/censo_porcino.ipynb` places the Spanish pig
+census within the broader European trend (Eurostat history and a per-country 2030 projection).
 
 **Part 3 — Economic viability (Monte Carlo)** (`03_viability/`, second stage): 25,000 simulations per
 location on a 15-year discounted cash flow model, with 3 plant scales, variable CAPEX and a ramp-up
@@ -255,10 +258,11 @@ notebooks/
 │   ├── 04_red_natura2000.ipynb
 │   ├── 05_red_viaria.ipynb
 │   └── 06_clasificacion_suelo.ipynb
-├── 02_analysis/                  500x500m grid, scoring, K-Means and final map
-│   └── idoneidad_scoring_clustering.ipynb
+├── 02_analysis/                  500x500m grid, scoring, K-Means, final map and EU pig census
+│   ├── idoneidad_scoring_clustering.ipynb
+│   └── censo_porcino.ipynb       EU pig census history and 2030 projection (Eurostat, CAGR)
 └── 03_viability/                 Economic viability of the Top 10
-    └── TFM_viabilidad_economica_Fl....ipynb
+    └── viabilidad_economica.ipynb
 
 streamlit_app/                    Project presentation application
 ├── __pycache__/
