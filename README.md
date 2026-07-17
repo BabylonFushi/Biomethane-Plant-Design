@@ -340,14 +340,68 @@ README.md
 requirements.txt
 ```
 
-**Interactive maps** (published on [GitHub Pages](https://babylonfushi.github.io/Biomethane-Plant-Design/), one per download notebook, except the suitability map):
+## 🗺️ Secondary maps
 
-- [Pig livestock](https://babylonfushi.github.io/Biomethane-Plant-Design/map/01_ganado_porcino/mapa_porcino_heatmap.html)
-- [Slope (3D DEM)](https://babylonfushi.github.io/Biomethane-Plant-Design/map/03_pendiente_dem/mapa_pendiente_3d_huesca.html)
-- [Natura 2000 network](https://babylonfushi.github.io/Biomethane-Plant-Design/map/04_red_natura2000/mapa_red_natura.html)
-- [Road network](https://babylonfushi.github.io/Biomethane-Plant-Design/map/05_red_viaria/mapa_pendiente_carreteras_huesca.html)
-- [Soil classification](https://babylonfushi.github.io/Biomethane-Plant-Design/map/06_clasificacion_suelo/mapa_clasificacion_huesca.html)
-- [Settlement buffer](https://babylonfushi.github.io/Biomethane-Plant-Design/map/06_clasificacion_suelo/mapa_buffer_poblacion_huesca.html)
+In addition to the final suitability map, each download notebook generates its own interactive validation map, published on [GitHub Pages](https://babylonfushi.github.io/Biomethane-Plant-Design/). They're secondary maps, but just as useful for auditing each layer on its own — here's a preview of each, with a link to explore them in depth:
+
+<table>
+<tr>
+<td width="50%">
+
+**🐖 Pig livestock**
+<br>KDE density of the pig population, weighted by farm capacity.
+<br><img src="docs/map/01_ganado_porcino/mapa_porcino_heatmap.png" width="100%">
+<br>[▶ View interactive map](https://babylonfushi.github.io/Biomethane-Plant-Design/map/01_ganado_porcino/mapa_porcino_heatmap.html)
+
+</td>
+<td width="50%">
+
+**⛰️ Slope (3D DEM)**
+<br>3D terrain relief from the IGN's 5 m digital terrain model.
+<br><img src="docs/map/03_pendiente_dem/mapa_pendiente_3d_huesca.png" width="100%">
+<br>[▶ View interactive map](https://babylonfushi.github.io/Biomethane-Plant-Design/map/03_pendiente_dem/mapa_pendiente_3d_huesca.html)
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+**🌳 Natura 2000 network**
+<br>Protected areas (ZEC/ZEPA) that act as a hard exclusion.
+<br><img src="docs/map/04_red_natura2000/mapa_red_natura.png" width="100%">
+<br>[▶ View interactive map](https://babylonfushi.github.io/Biomethane-Plant-Design/map/04_red_natura2000/mapa_red_natura.html)
+
+</td>
+<td width="50%">
+
+**🛣️ Road network**
+<br>Roads suitable for trucks, combined with terrain slope.
+<br><img src="docs/map/05_red_viaria/mapa_pendiente_carreteras_huesca.png" width="100%">
+<br>[▶ View interactive map](https://babylonfushi.github.io/Biomethane-Plant-Design/map/05_red_viaria/mapa_pendiente_carreteras_huesca.html)
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+**🏗️ Soil classification**
+<br>Urban planning categories (urban, developable, non-developable).
+<br><img src="docs/map/06_clasificacion_suelo/mapa_clasificacion_huesca.png" width="100%">
+<br>[▶ View interactive map](https://babylonfushi.github.io/Biomethane-Plant-Design/map/06_clasificacion_suelo/mapa_clasificacion_huesca.html)
+
+</td>
+<td width="50%">
+
+**🏘️ Settlement buffer**
+<br>Exclusion zones around urban settlements (INE).
+<br><img src="docs/map/06_clasificacion_suelo/mapa_buffer_poblacion_huesca.png" width="100%">
+<br>[▶ View interactive map](https://babylonfushi.github.io/Biomethane-Plant-Design/map/06_clasificacion_suelo/mapa_buffer_poblacion_huesca.html)
+
+</td>
+</tr>
+</table>
+
+> **Note:** image paths assume each `.html` file in `docs/map/` has a matching `.png` in the same folder (per the repo structure above). If the PNG filename differs from the `.html`, adjust the path accordingly.
 
 ## Pending cleanup
 
