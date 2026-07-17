@@ -121,6 +121,15 @@ README.md
 requirements.txt
 ```
 
+**Mapas interactivos** (`docs/map/`, uno por notebook de descarga, excepto el mapa de idoneidad):
+
+- [Ganado porcino](docs/map/01_ganado_porcino/mapa_porcino_heatmap.html)
+- [Pendiente (DEM 3D)](docs/map/03_pendiente_dem/mapa_pendiente_3d_huesca.html)
+- [Red Natura 2000](docs/map/04_red_natura2000/mapa_red_natura.html)
+- [Red viaria](docs/map/05_red_viaria/mapa_pendiente_carreteras_huesca.html)
+- [Clasificación del suelo](docs/map/06_clasificacion_suelo/mapa_clasificacion_huesca.html)
+- [Buffer núcleos de población](docs/map/06_clasificacion_suelo/mapa_buffer_poblacion_huesca.html)
+
 ## Pendiente de limpieza
 
 **Resuelto:**
@@ -276,6 +285,15 @@ streamlit_app/                    Project presentation application
 README.md
 requirements.txt
 ```
+
+**Interactive maps** (`docs/map/`, one per download notebook, except the suitability map):
+
+- [Pig livestock](docs/map/01_ganado_porcino/mapa_porcino_heatmap.html)
+- [Slope (3D DEM)](docs/map/03_pendiente_dem/mapa_pendiente_3d_huesca.html)
+- [Natura 2000 network](docs/map/04_red_natura2000/mapa_red_natura.html)
+- [Road network](docs/map/05_red_viaria/mapa_pendiente_carreteras_huesca.html)
+- [Soil classification](docs/map/06_clasificacion_suelo/mapa_clasificacion_huesca.html)
+- [Settlement buffer](docs/map/06_clasificacion_suelo/mapa_buffer_poblacion_huesca.html)
 
 ## Pending cleanup
 
