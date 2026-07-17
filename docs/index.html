@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biomethane Plant Design · Huesca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --soil: #14201A;
+    --soil-2: #1C2B22;
+    --biogas: #6FBF8B;
+    --slurry: #C79A4B;
+    --straw: #EFE3BE;
+    --line: rgba(239,227,190,0.14);
+    --muted: rgba(239,227,190,0.62);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background: var(--soil);
+    color: var(--straw);
+    font-family: 'Space Grotesk', sans-serif;
+    min-height:100vh;
+  }
+  .contours{
+    position:fixed; inset:0; z-index:0; opacity:0.5; pointer-events:none;
+  }
+  .wrap{
+    position:relative; z-index:1;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 72px 28px 100px;
+  }
+  header{ margin-bottom: 56px; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--biogas);
+    margin: 0 0 18px;
+  }
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(2.1rem, 5vw, 3.4rem);
+    line-height: 1.05;
+    margin: 0 0 20px;
+    color: var(--straw);
+  }
+  h1 em{
+    font-style: italic;
+    font-weight: 400;
+    color: var(--biogas);
+  }
+  .lede{
+    font-size: 16.5px;
+    line-height: 1.65;
+    color: var(--muted);
+    max-width: 56ch;
+    margin: 0;
+  }
+  .meta-row{
+    display:flex; gap: 28px; flex-wrap: wrap;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  .meta-row b{ color: var(--slurry); font-weight:500; }
+
+  .section-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 20px;
+    display:flex; align-items:center; gap: 12px;
+  }
+  .section-label::after{
+    content:""; flex:1; height:1px; background: var(--line);
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 56px;
+  }
+  @media (max-width: 640px){ .grid{ grid-template-columns: 1fr; } }
+
+  .card{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    gap: 10px;
+    background: var(--soil-2);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 22px 22px 20px;
+    text-decoration:none;
+    color: inherit;
+    transition: border-color .18s ease, transform .18s ease, background .18s ease;
+  }
+  .card:hover{
+    border-color: var(--biogas);
+    transform: translateY(-2px);
+    background: #203026;
+  }
+  .card .num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--slurry);
+    letter-spacing: 0.06em;
+  }
+  .card h3{
+    font-family:'Fraunces', serif;
+    font-weight: 600;
+    font-size: 19px;
+    margin: 0;
+    color: var(--straw);
+  }
+  .card p{
+    margin:0;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  .card .go{
+    margin-top: 6px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--biogas);
+    display:flex; align-items:center; gap:6px;
+  }
+  .card.disabled{
+    opacity: 0.45;
+    pointer-events: none;
+  }
+  .card.disabled .go{ color: var(--muted); }
+
+  .final{
+    background: linear-gradient(135deg, #223829, #16241C);
+    border: 1px solid var(--biogas);
+    border-radius: 4px;
+    padding: 32px;
+    display:flex;
+    flex-direction:column;
+    gap: 14px;
+    text-decoration:none;
+    color: inherit;
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .final:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+  }
+  .final .num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--biogas);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .final h2{
+    font-family:'Fraunces', serif;
+    font-weight: 700;
+    font-size: 28px;
+    margin: 0;
+  }
+  .final p{
+    margin:0;
+    color: var(--muted);
+    font-size: 14.5px;
+    line-height:1.6;
+    max-width: 60ch;
+  }
+  .final .go{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--straw);
+  }
+
+  footer{
+    margin-top: 64px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    color: var(--muted);
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  footer a{ color: var(--slurry); text-decoration:none; }
+</style>
+</head>
+<body>
+
+<svg class="contours" viewBox="0 0 980 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="#EFE3BE" stroke-opacity="0.05">
+    <path d="M -50 620 C 150 560, 300 660, 500 600 S 850 520, 1030 590"/>
+    <path d="M -50 560 C 180 500, 320 590, 520 540 S 860 460, 1030 520"/>
+    <path d="M -50 500 C 200 440, 340 520, 540 480 S 870 400, 1030 450"/>
+    <path d="M -50 440 C 220 390, 360 450, 560 420 S 880 350, 1030 390"/>
+    <path d="M -50 380 C 240 340, 380 380, 580 360 S 890 300, 1030 330"/>
+  </g>
+</svg>
+
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">Sistema de información geográfica · Huesca, España</p>
+    <h1>Localización óptima para una<br><em>planta de biometano</em></h1>
+    <p class="lede">
+      Análisis geoespacial paso a paso para identificar el emplazamiento más adecuado
+      a partir de la disponibilidad de purín porcino, la red de gasoductos, la pendiente
+      del terreno, los espacios protegidos y la accesibilidad viaria.
+    </p>
+    <div class="meta-row">
+      <span><b>Repo</b> BabylonFushi/Biomethane-Plant-Design</span>
+      <span><b>Insumo</b> purín porcino</span>
+      <span><b>Salida</b> mapa de idoneidad</span>
+    </div>
+  </header>
+
+  <p class="section-label">Mapas del proceso</p>
+  <div class="grid">
+
+    <a class="card" href="maps/mapa_porcino_heatmap.html">
+      <span class="num">01</span>
+      <h3>Densidad porcina</h3>
+      <p>Mapa de calor de la cabaña de ganado porcino en la provincia.</p>
+      <span class="go">Abrir mapa →</span>
+    </a>
+
+    <div class="card disabled">
+      <span class="num">02</span>
+      <h3>Red de gasoductos</h3>
+      <p>Salida en imagen estática (gasoductos_osm_huesca.png), sin versión interactiva.</p>
+      <span class="go">Sin mapa interactivo</span>
+    </div>
+
+    <a class="card" href="maps/mapa_pendiente_3d_huesca.html">
+      <span class="num">03</span>
+      <h3>Pendiente del terreno</h3>
+      <p>Modelo digital de elevaciones en 3D para descartar zonas de fuerte pendiente.</p>
+      <span class="go">Abrir mapa →</span>
+    </a>
+
+    <a class="card" href="maps/mapa_red_natura.html">
+      <span class="num">04</span>
+      <h3>Red Natura 2000</h3>
+      <p>Espacios protegidos que quedan excluidos como emplazamiento posible.</p>
+      <span class="go">Abrir mapa →</span>
+    </a>
+
+    <a class="card" href="maps/mapa_pendiente_carreteras_huesca.html">
+      <span class="num">05</span>
+      <h3>Red viaria</h3>
+      <p>Pendiente cruzada con la accesibilidad por carretera.</p>
+      <span class="go">Abrir mapa →</span>
+    </a>
+
+    <a class="card" href="maps/mapa_clasificacion_huesca.html">
+      <span class="num">06a</span>
+      <h3>Clasificación de suelo</h3>
+      <p>Usos de suelo compatibles con la instalación de la planta.</p>
+      <span class="go">Abrir mapa →</span>
+    </a>
+
+    <a class="card" href="maps/mapa_buffer_poblacion_huesca.html">
+      <span class="num">06b</span>
+      <h3>Buffer de población</h3>
+      <p>Distancia mínima de seguridad a núcleos urbanos.</p>
+      <span class="go">Abrir mapa →</span>
+    </a>
+
+  </div>
+
+  <p class="section-label">Resultado</p>
+  <a class="final" href="https://babylonfushi.github.io/biomethane_map/">
+    <span class="num">Mapa final · Scoring &amp; clustering</span>
+    <h2>Mapa de idoneidad para la planta de biometano</h2>
+    <p>
+      Combina todas las capas anteriores en un único índice de idoneidad y agrupa
+      las zonas candidatas por clustering. Publicado en el repo biomethane_map.
+    </p>
+    <span class="go">babylonfushi.github.io/biomethane_map →</span>
+  </a>
+
+  <footer>
+    <span>Biomethane-Plant-Design</span>
+    <a href="https://github.com/BabylonFushi/Biomethane-Plant-Design">Ver repositorio en GitHub</a>
+  </footer>
+
+</div>
+</body>
+</html>
