@@ -121,14 +121,14 @@ README.md
 requirements.txt
 ```
 
-**Mapas interactivos** (`docs/map/`, uno por notebook de descarga, excepto el mapa de idoneidad):
+**Mapas interactivos** (publicados en [GitHub Pages](https://babylonfushi.github.io/Biomethane-Plant-Design/), uno por notebook de descarga, excepto el mapa de idoneidad):
 
-- [Ganado porcino](docs/map/01_ganado_porcino/mapa_porcino_heatmap.html)
-- [Pendiente (DEM 3D)](docs/map/03_pendiente_dem/mapa_pendiente_3d_huesca.html)
-- [Red Natura 2000](docs/map/04_red_natura2000/mapa_red_natura.html)
-- [Red viaria](docs/map/05_red_viaria/mapa_pendiente_carreteras_huesca.html)
-- [Clasificación del suelo](docs/map/06_clasificacion_suelo/mapa_clasificacion_huesca.html)
-- [Buffer núcleos de población](docs/map/06_clasificacion_suelo/mapa_buffer_poblacion_huesca.html)
+- [Ganado porcino](https://babylonfushi.github.io/Biomethane-Plant-Design/map/01_ganado_porcino/mapa_porcino_heatmap.html)
+- [Pendiente (DEM 3D)](https://babylonfushi.github.io/Biomethane-Plant-Design/map/03_pendiente_dem/mapa_pendiente_3d_huesca.html)
+- [Red Natura 2000](https://babylonfushi.github.io/Biomethane-Plant-Design/map/04_red_natura2000/mapa_red_natura.html)
+- [Red viaria](https://babylonfushi.github.io/Biomethane-Plant-Design/map/05_red_viaria/mapa_pendiente_carreteras_huesca.html)
+- [Clasificación del suelo](https://babylonfushi.github.io/Biomethane-Plant-Design/map/06_clasificacion_suelo/mapa_clasificacion_huesca.html)
+- [Buffer núcleos de población](https://babylonfushi.github.io/Biomethane-Plant-Design/map/06_clasificacion_suelo/mapa_buffer_poblacion_huesca.html)
 
 ## Pendiente de limpieza
 
@@ -286,14 +286,14 @@ README.md
 requirements.txt
 ```
 
-**Interactive maps** (`docs/map/`, one per download notebook, except the suitability map):
+**Interactive maps** (published on [GitHub Pages](https://babylonfushi.github.io/Biomethane-Plant-Design/), one per download notebook, except the suitability map):
 
-- [Pig livestock](docs/map/01_ganado_porcino/mapa_porcino_heatmap.html)
-- [Slope (3D DEM)](docs/map/03_pendiente_dem/mapa_pendiente_3d_huesca.html)
-- [Natura 2000 network](docs/map/04_red_natura2000/mapa_red_natura.html)
-- [Road network](docs/map/05_red_viaria/mapa_pendiente_carreteras_huesca.html)
-- [Soil classification](docs/map/06_clasificacion_suelo/mapa_clasificacion_huesca.html)
-- [Settlement buffer](docs/map/06_clasificacion_suelo/mapa_buffer_poblacion_huesca.html)
+- [Pig livestock](https://babylonfushi.github.io/Biomethane-Plant-Design/map/01_ganado_porcino/mapa_porcino_heatmap.html)
+- [Slope (3D DEM)](https://babylonfushi.github.io/Biomethane-Plant-Design/map/03_pendiente_dem/mapa_pendiente_3d_huesca.html)
+- [Natura 2000 network](https://babylonfushi.github.io/Biomethane-Plant-Design/map/04_red_natura2000/mapa_red_natura.html)
+- [Road network](https://babylonfushi.github.io/Biomethane-Plant-Design/map/05_red_viaria/mapa_pendiente_carreteras_huesca.html)
+- [Soil classification](https://babylonfushi.github.io/Biomethane-Plant-Design/map/06_clasificacion_suelo/mapa_clasificacion_huesca.html)
+- [Settlement buffer](https://babylonfushi.github.io/Biomethane-Plant-Design/map/06_clasificacion_suelo/mapa_buffer_poblacion_huesca.html)
 
 ## Pending cleanup
 
