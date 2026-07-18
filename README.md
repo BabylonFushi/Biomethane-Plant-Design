@@ -2,7 +2,7 @@
 
 # Análisis de Idoneidad — Planta de Biometano (Huesca)
 
-Pipeline de análisis geoespacial (descarga de datos, procesado, scoring, clustering y viabilidad) que alimenta el [mapa interactivo](https://babylonfushi.github.io/biomethane_map/).
+Pipeline de análisis geoespacial (descarga de datos, procesado, scoring, clustering y viabilidad) que alimenta el [mapa interactivo](https://github.com/BabylonFushi/biomethane_map).
 
 **Las tres preguntas que responde:**
 
@@ -156,7 +156,7 @@ requirements.txt
 
 # Suitability Analysis — Biomethane Plant (Huesca)
 
-Geospatial analysis pipeline (data download, processing, scoring, clustering and viability) that feeds the [interactive map](https://babylonfushi.github.io/biomethane_map/).
+Geospatial analysis pipeline (data download, processing, scoring, clustering and viability) that feeds the [interactive map](https://github.com/BabylonFushi/biomethane_map).
 
 **The three questions it answers:**
 
