@@ -199,6 +199,63 @@
     gap: 10px;
   }
   footer a{ color: var(--slurry); text-decoration:none; }
+
+  .card .go::after{
+    content: "(vista rápida)";
+    margin-left: 4px;
+    color: var(--muted);
+    font-size: 10.5px;
+  }
+
+  .modal-overlay{
+    position: fixed; inset: 0; z-index: 50;
+    background: rgba(10,16,12,0.86);
+    display:none;
+    align-items:center; justify-content:center;
+    padding: 24px;
+  }
+  .modal-overlay.open{ display:flex; }
+  .modal-box{
+    position:relative;
+    width: 100%; max-width: 1180px;
+    height: 88vh;
+    background: var(--soil-2);
+    border: 1px solid var(--biogas);
+    border-radius: 6px;
+    display:flex; flex-direction:column;
+    overflow:hidden;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+  }
+  .modal-head{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--line);
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--muted);
+    flex-shrink:0;
+  }
+  .modal-head b{ color: var(--straw); font-family:'Fraunces', serif; font-size:16px; font-weight:600; }
+  .modal-head .actions{ display:flex; gap: 16px; align-items:center; }
+  .modal-head a{ color: var(--biogas); text-decoration:none; }
+  .modal-close{
+    background:none; border:none; cursor:pointer;
+    color: var(--straw); font-size: 20px; line-height:1;
+    font-family: monospace;
+    padding: 2px 6px;
+  }
+  .modal-close:hover{ color: var(--biogas); }
+  .modal-frame-wrap{ flex:1; position:relative; background:#0c1410; }
+  .modal-frame-wrap iframe{
+    position:absolute; inset:0; width:100%; height:100%; border:0;
+  }
+  .modal-loading{
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
 </style>
 </head>
 <body>
@@ -233,7 +290,7 @@
   <p class="section-label">Mapas del proceso</p>
   <div class="grid">
 
-    <a class="card" href="maps/mapa_porcino_heatmap.html">
+    <a class="card" href="maps/01_ganado_porcino/mapa_porcino_heatmap.html" data-map="maps/01_ganado_porcino/mapa_porcino_heatmap.html" data-title="01 · Densidad porcina">
       <span class="num">01</span>
       <h3>Densidad porcina</h3>
       <p>Mapa de calor de la cabaña de ganado porcino en la provincia.</p>
@@ -247,35 +304,35 @@
       <span class="go">Sin mapa interactivo</span>
     </div>
 
-    <a class="card" href="maps/mapa_pendiente_3d_huesca.html">
+    <a class="card" href="maps/03_pendiente_dem/mapa_pendiente_3d_huesca.html" data-map="maps/03_pendiente_dem/mapa_pendiente_3d_huesca.html" data-title="03 · Pendiente del terreno">
       <span class="num">03</span>
       <h3>Pendiente del terreno</h3>
       <p>Modelo digital de elevaciones en 3D para descartar zonas de fuerte pendiente.</p>
       <span class="go">Abrir mapa →</span>
     </a>
 
-    <a class="card" href="maps/mapa_red_natura.html">
+    <a class="card" href="maps/04_red_natura2000/mapa_red_natura.html" data-map="maps/04_red_natura2000/mapa_red_natura.html" data-title="04 · Red Natura 2000">
       <span class="num">04</span>
       <h3>Red Natura 2000</h3>
       <p>Espacios protegidos que quedan excluidos como emplazamiento posible.</p>
       <span class="go">Abrir mapa →</span>
     </a>
 
-    <a class="card" href="maps/mapa_pendiente_carreteras_huesca.html">
+    <a class="card" href="maps/05_red_viaria/mapa_pendiente_carreteras_huesca.html" data-map="maps/05_red_viaria/mapa_pendiente_carreteras_huesca.html" data-title="05 · Red viaria">
       <span class="num">05</span>
       <h3>Red viaria</h3>
       <p>Pendiente cruzada con la accesibilidad por carretera.</p>
       <span class="go">Abrir mapa →</span>
     </a>
 
-    <a class="card" href="maps/mapa_clasificacion_huesca.html">
+    <a class="card" href="maps/06_clasificacion_suelo/mapa_clasificacion_huesca.html" data-map="maps/06_clasificacion_suelo/mapa_clasificacion_huesca.html" data-title="06a · Clasificación de suelo">
       <span class="num">06a</span>
       <h3>Clasificación de suelo</h3>
       <p>Usos de suelo compatibles con la instalación de la planta.</p>
       <span class="go">Abrir mapa →</span>
     </a>
 
-    <a class="card" href="maps/mapa_buffer_poblacion_huesca.html">
+    <a class="card" href="maps/06_clasificacion_suelo/mapa_buffer_poblacion_huesca.html" data-map="maps/06_clasificacion_suelo/mapa_buffer_poblacion_huesca.html" data-title="06b · Buffer de población">
       <span class="num">06b</span>
       <h3>Buffer de población</h3>
       <p>Distancia mínima de seguridad a núcleos urbanos.</p>
@@ -301,5 +358,69 @@
   </footer>
 
 </div>
+
+<div class="modal-overlay" id="mapModal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <b id="mapModalTitle">Mapa</b>
+      <div class="actions">
+        <a id="mapModalOpen" href="#" target="_blank" rel="noopener">Abrir en pestaña propia ↗</a>
+        <button class="modal-close" id="mapModalClose" aria-label="Cerrar">✕</button>
+      </div>
+    </div>
+    <div class="modal-frame-wrap">
+      <div class="modal-loading" id="mapModalLoading">Cargando mapa…</div>
+      <iframe id="mapModalFrame" title="Vista previa del mapa" loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    var overlay = document.getElementById('mapModal');
+    var frame = document.getElementById('mapModalFrame');
+    var titleEl = document.getElementById('mapModalTitle');
+    var openLink = document.getElementById('mapModalOpen');
+    var closeBtn = document.getElementById('mapModalClose');
+    var loading = document.getElementById('mapModalLoading');
+
+    function openModal(src, title){
+      loading.style.display = 'flex';
+      frame.src = src;
+      titleEl.textContent = title || 'Mapa';
+      openLink.href = src;
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(){
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+      frame.src = 'about:blank';
+    }
+
+    frame.addEventListener('load', function(){
+      loading.style.display = 'none';
+    });
+
+    document.querySelectorAll('.card[data-map]').forEach(function(card){
+      card.addEventListener('click', function(e){
+        // Ctrl/Cmd/middle-click: dejar que el navegador abra el enlace normalmente en pestaña nueva
+        if (e.ctrlKey || e.metaKey || e.button === 1) return;
+        e.preventDefault();
+        openModal(card.getAttribute('data-map'), card.getAttribute('data-title'));
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', function(e){
+      if (e.target === overlay) closeModal();
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+    });
+  })();
+</script>
+
 </body>
 </html>
