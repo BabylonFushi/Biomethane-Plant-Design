@@ -1,0 +1,7 @@
+data/raw/**/*.gpkg
+data/raw/03_pendiente_dem/tiles_huesca/
+data/raw/03_pendiente_dem/*.tif
+data/raw/01_ganado_porcino/kde_porcino_huesca.tif
+data/processed/*
+!data/processed/keep.txt
+notebooks/01_download/cache/
