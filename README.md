@@ -182,8 +182,6 @@ Además del mapa de idoneidad final, cada notebook de descarga genera su propio 
 </tr>
 </table>
 
-> **Nota:** las rutas de imagen asumen que cada `.html` de `docs/map/` tiene su `.png` equivalente en la misma carpeta (tal como indica la estructura del repo). Si el nombre de archivo del PNG difiere del `.html`, ajusta la ruta correspondiente.
-
 ## Pendiente de limpieza
 
 **Resuelto:**
@@ -400,8 +398,6 @@ In addition to the final suitability map, each download notebook generates its o
 </td>
 </tr>
 </table>
-
-> **Note:** image paths assume each `.html` file in `docs/map/` has a matching `.png` in the same folder (per the repo structure above). If the PNG filename differs from the `.html`, adjust the path accordingly.
 
 ## Pending cleanup
 
