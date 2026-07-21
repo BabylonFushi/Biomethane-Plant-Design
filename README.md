@@ -123,7 +123,9 @@ requirements.txt
 
 ## 🗺️ Mapas secundarios
 
-Además del mapa de idoneidad final, cada notebook de descarga genera su propio mapa interactivo de validación, publicado en [GitHub Pages](https://babylonfushi.github.io/Biomethane-Plant-Design/). Son mapas secundarios pero igual de útiles para auditar cada capa por separado — aquí una vista previa de cada uno, con enlace para explorarlos a profundidad:
+**[▶ Abrir el visor interactivo de las 6 capas](https://babylonfushi.github.io/Biomethane-Plant-Design/)**
+
+Además del mapa de idoneidad final, cada notebook de descarga genera su propio mapa interactivo de validación. Son mapas secundarios pero igual de útiles para auditar cada capa por separado — aquí una vista previa de cada uno, con enlace para explorarlos a profundidad:
 
 <table>
 <tr>
@@ -340,7 +342,9 @@ requirements.txt
 
 ## 🗺️ Secondary maps
 
-In addition to the final suitability map, each download notebook generates its own interactive validation map, published on [GitHub Pages](https://babylonfushi.github.io/Biomethane-Plant-Design/). They're secondary maps, but just as useful for auditing each layer on its own — here's a preview of each, with a link to explore them in depth:
+**[▶ Open the interactive viewer for all 6 layers](https://babylonfushi.github.io/Biomethane-Plant-Design/)**
+
+In addition to the final suitability map, each download notebook generates its own interactive validation map. They're secondary maps, but just as useful for auditing each layer on its own — here's a preview of each, with a link to explore them in depth:
 
 <table>
 <tr>
